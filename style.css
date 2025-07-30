@@ -1,7 +1,7 @@
 /*
-    new-design.css - تنسيقات الموقع الجديدة (أزرق داكن وفضي/رمادي فاتح)
+    final-style.css - التنسيقات النهائية للموقع (أزرق داكن وفضي/رمادي فاتح)
     ------------------------------------------------------------------
-    تم تحديث هذا الكود لمعالجة مشاكل الظهور السابقة.
+    تم تحديث هذا الكود لمعالجة مشكلة عدم تناسق ارتفاع الفقرات.
 
     شرح الألوان المستخدمة:
     - --bg-dark: #192841;             /* خلفية الموقع الأساسية - أزرق داكن */
@@ -146,6 +146,8 @@ nav ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 25px;
     border: 1px solid rgba(173, 181, 189, 0.1);
+    display: flex; /* تم التعديل هنا لترتيب المحتوى داخل الكارت عمودياً */
+    flex-direction: column; /* تم التعديل هنا لترتيب المحتوى داخل الكارت عمودياً */
 }
 
 .article-card:hover {
@@ -165,6 +167,7 @@ nav ul li a:hover {
     color: var(--text-faded);
     font-size: 0.9rem;
     overflow: hidden;
+    flex-shrink: 0; /* منع الصورة من الانكماش لو المحتوى اللي تحتها كبير */
 }
 
 .article-card .article-image img {
@@ -177,22 +180,34 @@ nav ul li a:hover {
     font-size: 1.6rem;
     color: var(--accent-color);
     margin-bottom: 10px;
+    flex-shrink: 0; /* منع العنوان من الانكماش */
 }
 
 .article-card p {
     font-size: 0.95rem;
     color: var(--text-faded);
     margin-bottom: 20px;
+    height: 60px; /* ارتفاع ثابت 60px (تقريبا 3 سطور نص) */
+    overflow: hidden; /* هيخفي أي نص زيادة عن الارتفاع ده */
+    /* لو عايز النص الزائد يظهر ... هتضيف الأسطر دي */
+    /* text-overflow: ellipsis; */
+    /* display: -webkit-box; */
+    /* -webkit-line-clamp: 3; */
+    /* -webkit-box-orient: vertical; */
+    flex-grow: 1; /* السماح للفقرة بالتمدد لملء المساحة المتاحة */
+    flex-shrink: 0; /* منع الفقرة من الانكماش أقل من الـ 60px */
 }
 
 .article-card .read-more {
-    display: inline-block;
+    display: block; /* جعل الزرار يأخذ سطر لوحده */
     background-color: var(--accent-color);
     color: var(--bg-dark); /* لون النص داخل الزر يتناسب مع الخلفية الزرقاء الداكنة */
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center; /* عشان الزرار يبقى في نص الكارت لما ياخد سطر لوحده */
+    margin-top: auto; /* هيدفع الزرار لأسفل الكارت تماماً (مهم جداً للتماثل) */
 }
 
 .article-card .read-more:hover {
