@@ -1,151 +1,231 @@
-/* استيراد خط جميل */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+/*
+    style.css - تنسيقات الموقع الجديد (أسود وذهبي)
+    -----------
+    شرح الألوان المستخدمة:
+    - #1a1a1a: أسود فاحم للخلفية.
+    - #2e2e2e: رمادي داكن للعناصر الثانوية والخلفيات الداخلية.
+    - #DAA520: لون ذهبي أنيق للعناوين والأزرار.
+    - #f0f0f0: رمادي فاتح جدًا للنصوص الأساسية عشان تبقى مريحة للعين على الخلفية الغامقة.
+*/
 
-body {
-    margin: 0;
-    font-family: 'Cairo', sans-serif;
-    background: #121212;
-    color: #fff;
+:root {
+    --primary-black: #1a1a1a;
+    --secondary-dark-gray: #2e2e2e;
+    --elegant-gold: #DAA520; /* ذهبي أغمق قليلاً لأناقة أكتر */
+    --light-text-color: #f0f0f0;
+    --faded-text-color: #bbbbbb; /* للوصف المختصر مثلاً */
 }
 
-/* Navbar */
-.navbar {
+/* إعادة ضبط الإعدادات الأساسية للمتصفح */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط عام مريح */
+    background-color: var(--primary-black);
+    color: var(--light-text-color);
+    line-height: 1.6;
+    direction: rtl; /* عشان الموقع عربي */
+    text-align: right; /* عشان المحتوى يبدأ من اليمين */
+}
+
+a {
+    color: var(--elegant-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFD700; /* ذهبي أفتح عند التحويم */
+}
+
+/* الرأس (Header/Navbar) */
+header {
+    background-color: var(--secondary-dark-gray);
+    padding: 1.5rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    background: #1e1e1e;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    border-bottom: 2px solid var(--elegant-gold); /* خط دهبي تحت الهيدر */
 }
+
 .logo {
-    font-size: 24px;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #FFD700;
+    color: var(--elegant-gold);
 }
+
 .logo span {
-    color: #fff;
+    color: var(--light-text-color); /* لو حابب جزء من اللوجو بلون تاني */
 }
-.nav-links {
+
+nav ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
-}
-.nav-links a {
-    color: #FFD700;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-.nav-links a:hover {
-    color: #fff;
 }
 
-/* Hero */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(120deg, #000, #222);
-}
-.hero h1 span {
-    color: #FFD700;
-}
-.hero p {
-    font-size: 18px;
-    color: #ccc;
+nav ul li {
+    display: inline-block;
+    margin-left: 20px; /* مسافة بين "الرئيسية" وأي لينكات تانية */
 }
 
-/* Articles */
-.articles {
-    padding: 40px 20px;
-    text-align: center;
+nav ul li a {
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
-.articles h2 {
-    color: #FFD700;
+
+nav ul li a:hover {
+    background-color: rgba(218, 165, 32, 0.2); /* ذهبي خفيف عند التحويم */
+    color: var(--elegant-gold);
+}
+
+/* القسم الرئيسي للمحتوى */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 5%;
+}
+
+/* قسم الترحيب الرئيسي */
+.hero-section {
+    text-align: center;
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(218, 165, 32, 0.3); /* خط فاصل خفيف */
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3.2rem;
+    color: var(--elegant-gold);
+    margin-bottom: 15px;
+    font-family: 'Arial Narrow', sans-serif; /* خط مميز للعنوان الرئيسي */
+    letter-spacing: 1.5px;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    color: var(--faded-text-color);
+}
+
+/* عناوين الأقسام (أحدث المقالات) */
+.section-title {
+    font-size: 2.2rem;
+    color: var(--elegant-gold);
     margin-bottom: 30px;
+    text-align: right;
+    border-bottom: 2px solid var(--elegant-gold);
+    padding-bottom: 10px;
+    display: inline-block; /* عشان الخط يبقى على قد الكلام بالظبط */
 }
-.articles-container {
+
+/* تنسيق المقالات */
+.articles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 أعمدة أو أقل حسب الشاشة */
+    gap: 30px;
 }
-.card {
-    background: #1e1e1e;
+
+.article-card {
+    background-color: var(--secondary-dark-gray);
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px; /* مسافة داخل الكارت */
+    border: 1px solid rgba(218, 165, 32, 0.1); /* برواز خفيف ذهبي */
 }
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+
+.article-card:hover {
+    transform: translateY(-5px); /* حركة بسيطة عند التحويم */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
-.card img {
+
+.article-card .article-image {
     width: 100%;
-    display: block;
-}
-.card h3 {
-    padding: 15px;
-    font-size: 20px;
-}
-.card p {
-    padding: 0 15px 15px;
-    color: #ccc;
-}
-.card .btn {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin: 0 15px 15px;
-    background: #FFD700;
-    color: #000;
-    text-decoration: none;
+    height: 180px; /* طول ثابت للصور */
+    background-color: #444; /* لون مؤقت للصورة لو مفيش صورة */
+    margin-bottom: 15px;
     border-radius: 5px;
-    transition: background 0.3s ease;
-}
-.card .btn:hover {
-    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--faded-text-color);
+    font-size: 0.9rem;
+    overflow: hidden; /* عشان الصورة متطلعش بره */
 }
 
-/* Single Article */
-.single-article {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-}
-.single-article img {
+.article-card .article-image img {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-.single-article h1 {
-    color: #FFD700;
-    margin-bottom: 20px;
-}
-.single-article p {
-    color: #ccc;
-    line-height: 1.8;
+    height: 100%;
+    object-fit: cover; /* عشان الصورة تملأ المكان بدون تشويه */
 }
 
-/* Footer */
+
+.article-card h3 {
+    font-size: 1.6rem;
+    color: var(--elegant-gold);
+    margin-bottom: 10px;
+}
+
+.article-card p {
+    font-size: 0.95rem;
+    color: var(--faded-text-color);
+    margin-bottom: 20px;
+}
+
+.article-card .read-more {
+    display: inline-block;
+    background-color: var(--elegant-gold);
+    color: var(--primary-black); /* لون النص داخل الزر يبقى أسود */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.article-card .read-more:hover {
+    background-color: #FFD700;
+    color: var(--primary-black);
+}
+
+/* الفوتر (الجزء السفلي للموقع) */
 footer {
-    background: #1e1e1e;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    color: #ccc;
+    padding: 30px 0;
+    margin-top: 50px;
+    background-color: var(--secondary-dark-gray);
+    color: var(--faded-text-color);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(218, 165, 32, 0.3);
 }
 
-/* زر العودة للأعلى */
-#backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #FFD700;
-    color: #000;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
+/* تنسيقات الشاشات الصغيرة (لو الموقع اتفتح من الموبايل) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        margin-top: 15px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .articles-grid {
+        grid-template-columns: 1fr; /* عمود واحد بس في الموبايل */
+    }
 }
