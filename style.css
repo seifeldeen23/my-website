@@ -1,42 +1,128 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f2f2f2;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #fff;
 }
 
-header {
-    background: #333;
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #1e1e1e;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+}
+.logo span {
     color: #fff;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(120deg, #000, #222);
+}
+.hero h1 span {
+    color: #FFD700;
+}
+.hero p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Articles */
+.articles {
+    padding: 40px 20px;
+    text-align: center;
+}
+.articles h2 {
+    color: #FFD700;
+    margin-bottom: 30px;
+}
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    width: 100%;
+    display: block;
+}
+.card h3 {
+    padding: 15px;
+    font-size: 20px;
+}
+.card p {
+    padding: 0 15px 15px;
+    color: #ccc;
+}
+.card .btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 0 15px 15px;
+    background: #FFD700;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.card .btn:hover {
+    background: #fff;
+}
+
+/* Single Article */
+.single-article {
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
 }
-
-.main {
-    padding: 40px;
-}
-
-.main img {
-    border-radius: 10px;
+.single-article img {
+    width: 100%;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
-
-button {
-    padding: 10px 20px;
-    background: #ff5722;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.single-article h1 {
+    color: #FFD700;
+    margin-bottom: 20px;
 }
-button:hover {
-    background: #e64a19;
+.single-article p {
+    color: #ccc;
+    line-height: 1.8;
 }
 
+/* Footer */
 footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
+    background: #1e1e1e;
+    text-align: center;
+    padding: 20px;
     margin-top: 40px;
+    color: #ccc;
 }
