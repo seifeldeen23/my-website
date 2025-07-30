@@ -1,6 +1,9 @@
+/* استيراد خط جميل */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Cairo', sans-serif;
     background: #121212;
     color: #fff;
 }
@@ -12,6 +15,9 @@ body {
     align-items: center;
     padding: 15px 50px;
     background: #1e1e1e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 .logo {
     font-size: 24px;
@@ -30,6 +36,7 @@ body {
     color: #FFD700;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 .nav-links a:hover {
     color: #fff;
@@ -39,90 +46,4 @@ body {
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(120deg, #000, #222);
-}
-.hero h1 span {
-    color: #FFD700;
-}
-.hero p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* Articles */
-.articles {
-    padding: 40px 20px;
-    text-align: center;
-}
-.articles h2 {
-    color: #FFD700;
-    margin-bottom: 30px;
-}
-.articles-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-.card {
-    background: #1e1e1e;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-}
-.card img {
-    width: 100%;
-    display: block;
-}
-.card h3 {
-    padding: 15px;
-    font-size: 20px;
-}
-.card p {
-    padding: 0 15px 15px;
-    color: #ccc;
-}
-.card .btn {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin: 0 15px 15px;
-    background: #FFD700;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.card .btn:hover {
-    background: #fff;
-}
-
-/* Single Article */
-.single-article {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-}
-.single-article img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-.single-article h1 {
-    color: #FFD700;
-    margin-bottom: 20px;
-}
-.single-article p {
-    color: #ccc;
-    line-height: 1.8;
-}
-
-/* Footer */
-footer {
-    background: #1e1e1e;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    color: #ccc;
-}
+    background: linear-
