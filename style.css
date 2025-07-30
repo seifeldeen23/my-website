@@ -124,10 +124,10 @@ nav ul li a:hover {
     display: inline-block; /* عشان الخط الفاصل يكون على قد الكلام بالظبط */
 }
 
-/* تنسيق المقالات (Card Layout) */
+/* تنسيق المقالات */
 .articles-grid {
-    display: grid; /* استخدام نظام الـ Grid لترتيب المقالات */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* المقالات هتترتب في 3 أعمدة أو أقل حسب حجم الشاشة */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* هنا بنأكد على 3 أعمدة متساوية في العرض دايماً */
     gap: 30px; /* مسافة بين كروت المقالات */
 }
 
@@ -136,7 +136,7 @@ nav ul li a:hover {
     border-radius: 8px; /* حواف دائرية لكارت المقال */
     overflow: hidden; /* لإخفاء أي جزء من المحتوى يخرج عن حدود الكارت */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* ظل خفيف للكارت */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* حركة بسيطة عند التحويم */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* حركة بسيطة عند التحويم بالماوس */
     padding: 25px; /* مسافة داخل الكارت */
     border: 1px solid rgba(173, 181, 189, 0.1); /* برواز خفيف فضي حوالين الكارت */
 }
