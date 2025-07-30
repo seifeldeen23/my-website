@@ -1,0 +1,308 @@
+/*
+    style.css - تنسيقات الموقع الجديد (أزرق داكن وفضي/رمادي فاتح)
+    -----------
+    شرح الألوان المستخدمة:
+    - #192841: أزرق داكن للخلفية الرئيسية (Dark Blue).
+    - #274060: درجة أفتح من الأزرق الداكن للعناصر الثانوية والخلفيات الداخلية (مثل كروت المقالات والهيدر والفوتر).
+    - #adb5bd: فضي/رمادي فاتح للعناوين الرئيسية والأزرار (Primary Silver/Light Gray).
+    - #f8f9fa: أبيض مائل للرمادي الفاتح جدًا للنصوص الأساسية عشان تبقى مريحة للعين على الخلفية الغامقة (Very Light Gray/Off-white).
+    - #ced4da: رمادي متوسط للنصوص الثانوية والوصف المختصر (Medium Gray).
+*/
+
+:root {
+    --primary-dark-blue: #192841;
+    --secondary-dark-blue: #274060;
+    --primary-silver: #adb5bd;
+    --light-text-color: #f8f9fa;
+    --secondary-text-color: #ced4da;
+}
+
+/* إعادة ضبط الإعدادات الأساسية للمتصفح (مهمة لكل مشروع) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط عام مريح وواضح */
+    background-color: var(--primary-dark-blue); /* خلفية الموقع الأساسية */
+    color: var(--light-text-color); /* لون النص الأساسي */
+    line-height: 1.6; /* مسافة بين السطور لسهولة القراءة */
+    direction: rtl; /* عشان الموقع عربي (من اليمين لليسار) */
+    text-align: right; /* عشان المحتوى يبدأ من اليمين */
+}
+
+a {
+    color: var(--primary-silver); /* لون اللينكات */
+    text-decoration: none; /* إزالة الخط اللي تحت اللينكات */
+    transition: color 0.3s ease; /* حركة بسيطة عند التحويم بالماوس */
+}
+
+a:hover {
+    color: #e0f2f7; /* لون أفتح للينكات عند التحويم */
+}
+
+/* الرأس (Header/Navbar) - الجزء العلوي للموقع */
+header {
+    background-color: var(--secondary-dark-blue); /* خلفية الهيدر */
+    padding: 1.5rem 5%; /* مسافات داخلية للهيدر */
+    display: flex; /* لترتيب العناصر جنب بعض (اللوجو والقائمة) */
+    justify-content: space-between; /* اللوجو على اليمين والقائمة على الشمال */
+    align-items: center; /* محاذاة العناصر في المنتصف رأسيًا */
+    border-bottom: 2px solid var(--primary-silver); /* خط فاصل فضي تحت الهيدر */
+}
+
+.logo {
+    font-size: 1.8rem; /* حجم خط اللوجو */
+    font-weight: bold; /* اللوجو سميك */
+    color: var(--primary-silver); /* لون اللوجو الرئيسي (New.) */
+}
+
+.logo span {
+    color: var(--light-text-color); /* لون الجزء الثاني من اللوجو (blog) */
+}
+
+nav ul {
+    list-style: none; /* إزالة النقاط من القائمة */
+}
+
+nav ul li {
+    display: inline-block; /* عرض عناصر القائمة جنب بعض */
+    margin-left: 20px; /* مسافة بين كل عنصر وعنصر في القائمة */
+}
+
+nav ul li a {
+    color: var(--light-text-color); /* لون نصوص القائمة */
+    font-size: 1.1rem; /* حجم خط نصوص القائمة */
+    padding: 5px 10px; /* مسافة داخلية للينكات */
+    border-radius: 5px; /* حواف دائرية للينكات */
+    transition: background-color 0.3s ease; /* حركة بسيطة عند التحويم */
+}
+
+nav ul li a:hover {
+    background-color: rgba(173, 181, 189, 0.2); /* خلفية خفيفة فضية عند التحويم */
+    color: var(--primary-silver); /* تغيير لون النص للفضى عند التحويم */
+}
+
+/* القسم الرئيسي للمحتوى (Main Content Area) */
+.container {
+    max-width: 1200px; /* أقصى عرض للمحتوى عشان ميتمدش على الشاشة كلها */
+    margin: 30px auto; /* توسيط المحتوى في الصفحة مع مسافة من فوق وتحت */
+    padding: 0 5%; /* مسافة داخلية على اليمين والشمال عشان المحتوى ميكنش لازق في الأطراف */
+}
+
+/* قسم الترحيب الرئيسي (Hero Section) - الجزء الكبير اللي فوق في الصفحة الرئيسية */
+.hero-section {
+    text-align: center; /* النص في المنتصف */
+    padding: 60px 0; /* مسافة داخلية من فوق وتحت */
+    border-bottom: 1px solid rgba(173, 181, 189, 0.3); /* خط فاصل فضي خفيف من تحت */
+    margin-bottom: 40px; /* مسافة تحت القسم ده */
+}
+
+.hero-section h1 {
+    font-size: 3.2rem; /* حجم خط العنوان الرئيسي */
+    color: var(--primary-silver); /* لون العنوان الرئيسي */
+    margin-bottom: 15px; /* مسافة تحت العنوان */
+    font-family: 'Arial Narrow', sans-serif; /* خط مميز للعنوان الرئيسي */
+    letter-spacing: 1.5px; /* مسافة بين الحروف */
+}
+
+.hero-section p {
+    font-size: 1.3rem; /* حجم خط الوصف */
+    color: var(--secondary-text-color); /* لون الوصف */
+}
+
+/* عناوين الأقسام (مثلاً "أحدث المقالات") */
+.section-title {
+    font-size: 2.2rem; /* حجم خط عنوان القسم */
+    color: var(--primary-silver); /* لون عنوان القسم */
+    margin-bottom: 30px; /* مسافة تحت العنوان */
+    text-align: right; /* النص يبدأ من اليمين */
+    border-bottom: 2px solid var(--primary-silver); /* خط فاصل فضي تحت العنوان */
+    padding-bottom: 10px; /* مسافة بين العنوان والخط الفاصل */
+    display: inline-block; /* عشان الخط الفاصل يكون على قد الكلام بالظبط */
+}
+
+/* تنسيق المقالات */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* هنا بنأكد على 3 أعمدة متساوية في العرض دايماً */
+    gap: 30px; /* مسافة بين كروت المقالات */
+}
+
+.article-card {
+    background-color: var(--secondary-dark-blue); /* خلفية كارت المقال */
+    border-radius: 8px; /* حواف دائرية لكارت المقال */
+    overflow: hidden; /* لإخفاء أي جزء من المحتوى يخرج عن حدود الكارت */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* ظل خفيف للكارت */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* حركة بسيطة عند التحويم بالماوس */
+    padding: 25px; /* مسافة داخل الكارت */
+    border: 1px solid rgba(173, 181, 189, 0.1); /* برواز خفيف فضي حوالين الكارت */
+}
+
+.article-card:hover {
+    transform: translateY(-5px); /* حركة بسيطة للكارت للأعلى عند التحويم */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* ظل أوضح عند التحويم */
+}
+
+.article-card .article-image {
+    width: 100%; /* الصورة تملأ عرض الكارت */
+    height: 180px; /* طول ثابت لكل صور المقالات */
+    background-color: #444; /* لون مؤقت لو مفيش صورة */
+    margin-bottom: 15px; /* مسافة تحت الصورة */
+    border-radius: 5px; /* حواف دائرية للصورة */
+    display: flex; /* لمركزة النص لو مفيش صورة */
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    overflow: hidden; /* عشان الصورة متطلعش بره حدود المكان المخصص ليها */
+}
+
+.article-card .article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عشان الصورة تملأ المكان كله بدون تشويه */
+}
+
+.article-card h3 {
+    font-size: 1.6rem; /* حجم خط عنوان المقال في الكارت */
+    color: var(--primary-silver); /* لون عنوان المقال */
+    margin-bottom: 10px; /* مسافة تحت العنوان */
+}
+
+.article-card p {
+    font-size: 0.95rem; /* حجم خط وصف المقال في الكارت */
+    color: var(--secondary-text-color); /* لون وصف المقال */
+    margin-bottom: 20px; /* مسافة تحت الوصف */
+}
+
+.article-card .read-more {
+    display: inline-block; /* عشان الزر ياخد حجم المحتوى ويبقى ليه مسافات */
+    background-color: var(--primary-silver); /* خلفية زر "اقرأ المزيد" */
+    color: var(--primary-dark-blue); /* لون النص داخل الزر */
+    padding: 10px 20px; /* مسافة داخلية للزر */
+    border-radius: 5px; /* حواف دائرية للزر */
+    font-weight: bold; /* النص داخل الزر سميك */
+    transition: background-color 0.3s ease, color 0.3s ease; /* حركة بسيطة عند التحويم */
+}
+
+.article-card .read-more:hover {
+    background-color: #e0f2f7; /* لون أفتح لزر "اقرأ المزيد" عند التحويم */
+    color: var(--primary-dark-blue); /* لون النص داخل الزر يفضل أزرق داكن */
+}
+
+/* الفوتر (الجزء السفلي للموقع) */
+footer {
+    text-align: center; /* النص في المنتصف */
+    padding: 30px 0; /* مسافة داخلية من فوق وتحت */
+    margin-top: 50px; /* مسافة من أعلى الفوتر */
+    background-color: var(--secondary-dark-blue); /* خلفية الفوتر */
+    color: var(--secondary-text-color); /* لون نص الفوتر */
+    font-size: 0.9rem; /* حجم خط الفوتر */
+    border-top: 1px solid rgba(173, 181, 189, 0.3); /* خط فاصل فضي خفيف فوق الفوتر */
+}
+
+/* تنسيقات الشاشات الصغيرة (لو الموقع اتفتح من الموبايل أو التابلت) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* العناصر في الهيدر تترتب تحت بعض */
+        text-align: center; /* النص يبقى في المنتصف */
+    }
+    nav ul {
+        margin-top: 15px; /* مسافة بين اللوجو والقائمة */
+    }
+    nav ul li {
+        margin: 0 10px; /* مسافة أقل بين عناصر القائمة في الموبايل */
+    }
+    .hero-section h1 {
+        font-size: 2.5rem; /* حجم خط العنوان الرئيسي أصغر في الموبايل */
+    }
+    .hero-section p {
+        font-size: 1.1rem; /* حجم خط الوصف أصغر في الموبايل */
+    }
+    .section-title {
+        font-size: 1.8rem; /* حجم خط عنوان القسم أصغر في الموبايل */
+    }
+    .articles-grid {
+        grid-template-columns: 1fr; /* المقالات هتظهر في عمود واحد بس في الموبايل */
+    }
+}
+
+/* تنسيقات صفحة المقال الفردي (article.html) */
+.article-page-content {
+    background-color: var(--secondary-dark-blue); /* خلفية منطقة المحتوى في صفحة المقال */
+    padding: 40px; /* مسافة داخلية للمحتوى */
+    border-radius: 8px; /* حواف دائرية للمنطقة */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* ظل للمنطقة */
+}
+
+.article-page-content .article-title {
+    font-size: 2.8rem; /* حجم خط عنوان المقال الرئيسي */
+    color: var(--primary-silver); /* لون عنوان المقال */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.article-page-content .article-meta {
+    font-size: 0.9rem; /* حجم خط بيانات المقال (الكاتب والتاريخ) */
+    color: var(--secondary-text-color); /* لون البيانات */
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(173, 181, 189, 0.2); /* خط فاصل خفيف */
+    padding-bottom: 15px;
+}
+
+.article-page-content .author {
+    color: var(--primary-silver); /* لون اسم الكاتب */
+    font-weight: bold;
+}
+
+.article-page-content .article-body p {
+    font-size: 1.1rem; /* حجم خط الفقرات داخل المقال */
+    margin-bottom: 20px;
+    color: var(--light-text-color); /* لون نص الفقرات */
+}
+
+.article-page-content .article-body h3 {
+    font-size: 1.8rem; /* حجم خط العناوين الفرعية داخل المقال */
+    color: var(--primary-silver); /* لون العناوين الفرعية */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--primary-silver); /* خط فاصل منقط */
+    padding-bottom: 5px;
+}
+
+.article-page-content .article-inner-image {
+    max-width: 100%; /* الصورة متزدش عن عرض المحتوى */
+    height: auto; /* الحفاظ على أبعاد الصورة */
+    display: block; /* الصورة تاخد سطر لوحدها */
+    margin: 30px auto; /* توسيط الصورة ومسافات حواليها */
+    border-radius: 8px; /* حواف دائرية للصورة */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* ظل خفيف للصورة */
+}
+
+.article-page-content .article-body ul,
+.article-page-content .article-body ol {
+    margin-right: 20px; /* مسافة للقايم عشان النقط/الأرقام تبان */
+    margin-bottom: 20px;
+    list-style-type: disc; /* شكل النقاط (ممكن تخليها square أو circle) */
+    color: var(--light-text-color); /* لون نص القايمة */
+}
+
+.article-page-content .article-body ul li,
+.article-page-content .article-body ol li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.article-page-content .article-body a {
+    font-weight: bold; /* اللينكات داخل المقال سميكة */
+}
+
+/* تنسيق خاص بقسم التعليقات (لو هتضيفه) */
+.comments-section h2 {
+    font-size: 2rem;
+    color: var(--primary-silver);
+    margin-bottom: 20px;
+}
